@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package avg;
+
+option go_package = ".;dproto2";
+
+message Request {
+  int32 numbers = 1;
+}
+
+message Response {
+  float avg = 1;
+}
+
+service PrimeService {
+  rpc AVG(stream Request) returns ( Response) {};
+}
